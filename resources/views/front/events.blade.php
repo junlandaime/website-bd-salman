@@ -124,7 +124,7 @@
                         <p class="font-medium text-sm text-[#FF6129]">Our Categories</p>
                     </div>
                 </div>
-                <div class="grid grid-cols-3 gap-[30px]">
+                <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-[30px]">
                     @forelse ($categories as $category)
                         @foreach ($category->child as $kategori)
                             <a href="{{ route('front.category', $kategori) }}"
@@ -242,7 +242,7 @@
                         <p class="font-medium text-sm text-[#FF6129]">Our Categories</p>
                     </div>
                 </div>
-                <div class="grid grid-cols-3 gap-[30px]">
+                <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-[30px]">
                     @forelse ($categories as $category)
                         @foreach ($category->child as $kategori)
                             <a href="{{ route('front.category', $kategori) }}"
