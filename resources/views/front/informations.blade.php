@@ -16,7 +16,7 @@
                 <div class="tc sf yo zf kq">
 
                     <div class="jn/2 so">
-                        <div class="animate_top fb">
+                        {{-- <div class="animate_top fb">
                             <form action="#">
                                 <div class="i">
                                     <input type="text" placeholder="Search Here..."
@@ -31,7 +31,7 @@
                                     </button>
                                 </div>
                             </form>
-                        </div>
+                        </div> --}}
 
                         <div class="animate_top">
                             <h4 class="tj kk wm qb">Related Posts</h4>
@@ -45,15 +45,16 @@
 
                                     </div>
                                     <h5 class="line-clamp-1 -mt-7 mb-7 text-wrap w-32 hover:line-clamp-none">
-                                        <a href="{{ route('front.readmore', $post) }}">{{ $post->title }}</a>
+                                        <a href="{{ route('front.infomore', $post) }}">{{ $post->title }}</a>
                                     </h5>
-                                @empty
+                                </div>
+                            @empty
                             @endforelse
 
                         </div>
                     </div>
 
-                    <div class="ro">
+                    <div class="jn/2 ro">
                         <div class="animate_top rounded-md shadow-solid-13  p-7.5 md:p-10">
                             @if ($posts->first())
                                 <img src="{{ Storage::url($posts->first()->image) }}" alt="{{ $posts->first()->title }}" />

@@ -44,7 +44,7 @@
                             <option value="">Choose category</option>
                             @role('superadmin')
                                 @php
-                                    $categories = $categories->where('id', 4);
+                                    $categories = $categories->where('id', 5);
                                 @endphp
                                 @forelse($categories as $category)
                                     @foreach ($category->child as $child)
@@ -72,18 +72,25 @@
                                 required autofocus autocomplete="meet" />
                             <x-input-error :messages="$errors->get('meet')" class="mt-2" />
                         </div>
-                        <div>
+                        {{-- <div>
                             <x-input-label for="link" :value="__('Link Pendaftaran')" />
                             <x-text-input id="link" class="mt-1" type="text" name="link" :value="old('link')"
                                 required autofocus autocomplete="link" />
                             <x-input-error :messages="$errors->get('link')" class="mt-2" />
-                        </div>
+                        </div> --}}
                     </div>
 
                     <div class="mt-4">
-                        <x-input-label for="excerpt" :value="__('Ringkasan')" />
-                        <x-text-input id="excerpt" class="block mt-1 w-full" type="text" name="excerpt"
-                            :value="old('excerpt')" required autofocus autocomplete="excerpt" />
+
+                        <x-input-label for="link" :value="__('Link Pendaftaran')" />
+                        <textarea name="link" id="link" cols="30" rows="3" class="border border-slate-300 rounded-xl w-full"></textarea>
+                        <x-input-error :messages="$errors->get('link')" class="mt-2" />
+                        <p>standar width 480px</p>
+                    </div>
+
+                    <div class="mt-4">
+                        <x-input-label for="excerpt" :value="__('Ringkasan Acara')" />
+                        <textarea name="excerpt" id="excerpt" cols="30" rows="5" class="border border-slate-300 rounded-xl w-full"></textarea>
                         <x-input-error :messages="$errors->get('excerpt')" class="mt-2" />
                     </div>
 
@@ -195,6 +202,8 @@
     <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 
     <script>
+        CKEDITOR.replace('link');
+        CKEDITOR.replace('excerpt');
         CKEDITOR.replace('description');
         CKEDITOR.replace('facility');
         CKEDITOR.replace('jadwal');

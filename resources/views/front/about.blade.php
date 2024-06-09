@@ -117,7 +117,7 @@
                                 <p>Jl. Ganesa No.7, Lb. Siliwangi, Kecamatan Coblong, Kota Bandung, Jawa Barat 40132</p>
                             </div>
                             <div class="fb">
-                                <h4 class="wj kk wm cc">Phone Number</h4>
+                                <h4 class="wj kk wm cc">reservasi Number</h4>
                                 <p><a href="https://wa.me/6285722183585">(+62) 857 2218 35852</a></p>
                             </div>
 
@@ -169,38 +169,38 @@
                             <form action="https://formbold.com/s/unique_form_id" method="POST">
                                 <div class="tc sf yo ap zf ep qb">
                                     <div class="vd to/2">
-                                        <label class="rc ac" for="fullname">Full name</label>
-                                        <input type="text" name="fullname" id="fullname" placeholder="Devid Wonder"
+                                        <label class="rc ac" for="fullname">Nama Lengkap</label>
+                                        <input type="text" name="fullname" id="fullname" placeholder="Saliman Itabi"
                                             class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi" />
                                     </div>
 
-                                    <div class="vd to/2">
-                                        <label class="rc ac" for="email">Email address</label>
+                                    {{-- <div class="vd to/2">
+                                        <label class="rc ac" for="email">Alamat Email</label>
                                         <input type="email" name="email" id="email"
                                             placeholder="example@gmail.com"
                                             class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi" />
-                                    </div>
+                                    </div> --}}
                                 </div>
 
                                 <div class="tc sf yo ap zf ep qb">
                                     <div class="vd to/2">
-                                        <label class="rc ac" for="phone">Hari - Tanggal Pengajuan</label>
-                                        <input type="text" name="phone" id="phone"
+                                        <label class="rc ac" for="reservasi">Hari - Tanggal Pengajuan</label>
+                                        <input type="text" name="reservasi" id="reservasi"
                                             placeholder="Hari, Tanggal-Bulan"
                                             class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi" />
                                     </div>
 
                                     <div class="vd to/2">
-                                        <label class="rc ac" for="subject">Subject</label>
+                                        <label class="rc ac" for="subject">Topik Konsultasi</label>
                                         <input type="text" for="subject" id="subject"
-                                            placeholder="Type your subject"
+                                            placeholder="Tulis Tentang apa"
                                             class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi" />
                                     </div>
                                 </div>
 
                                 <div class="fb">
                                     <label class="rc ac" for="message">Message</label>
-                                    <textarea placeholder="Message" rows="4" name="message" id="message"
+                                    <textarea placeholder="Pesan tambahan untuk admin" rows="4" name="message" id="message"
                                         class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 ci"></textarea>
                                 </div>
 
@@ -286,7 +286,7 @@
     function gettogetInputValue() {
         let inputName = document.getElementById("fullname").value;
         let inputTopik = document.getElementById("subject").value;
-        let reservasi = document.getElementById("phone").value;
+        let reservasi = document.getElementById("reservasi").value;
         let inputMessage = document.getElementById("message").value;
         let tombol = document.getElementById('startcon')
         let hrefAwal =

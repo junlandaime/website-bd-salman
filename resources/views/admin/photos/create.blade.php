@@ -44,7 +44,7 @@
                             <option value="">Choose category</option>
                             @role('superadmin')
                                 @php
-                                    $categories = $categories->where('slug', 'gallery');
+                                    // $categories = $categories->where('slug', 'event');
                                 @endphp
                                 @forelse($categories as $category)
                                     @foreach ($category->child as $child)

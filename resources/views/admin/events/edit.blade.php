@@ -88,12 +88,19 @@
                                 value='{{ $event->meet }}' required autofocus autocomplete="meet" />
                             <x-input-error :messages="$errors->get('meet')" class="mt-2" />
                         </div>
-                        <div>
+                        {{-- <div>
                             <x-input-label for="link" :value="__('Link Pendaftaran')" />
                             <x-text-input id="link" class="mt-1" type="text" name="link" :value="old('link')"
                                 value='{{ $event->link }}' required autofocus autocomplete="link" />
                             <x-input-error :messages="$errors->get('link')" class="mt-2" />
-                        </div>
+                        </div> --}}
+                    </div>
+
+                    <div class="mt-4">
+                        <x-input-label for="link" :value="__('Link Pendaftaran')" />
+                        <x-text-input value='{{ $event->link }}' id="link" class="block mt-1 w-full"
+                            type="text" name="link" required autofocus autocomplete="link" />
+                        <x-input-error :messages="$errors->get('link')" class="mt-2" />
                     </div>
 
                     <div class="mt-4">
@@ -216,6 +223,8 @@
     <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
     {{-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> --}}
     <script>
+        CKEDITOR.replace('link');
+        CKEDITOR.replace('excerpt');
         CKEDITOR.replace('description');
         CKEDITOR.replace('facility');
         CKEDITOR.replace('jadwal');

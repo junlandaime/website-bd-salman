@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Tag;
 use App\Models\Event;
+use App\Models\Photo;
 use App\Models\Post;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -42,11 +43,12 @@ class FrontController extends Controller
     public function details(Event $event)
     {
         $events = Event::orderBy('id', 'desc')->get();
+        $galleries = Photo::where('gallery_id', $event->category->id)->paginate(4);
         $tags = Tag::where('name', '!=', '')->orderBy('name', 'asc')->get();
         $now = Carbon::now();
 
 
-        return view('front.details', compact('event', 'tags', 'now'));
+        return view('front.details', compact('event', 'tags', 'now', 'galleries'));
     }
 
     public function features()

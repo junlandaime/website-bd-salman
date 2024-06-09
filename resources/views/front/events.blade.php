@@ -1,7 +1,7 @@
 @extends('front.layouts.front')
 
 @section('title')
-    <title>Bidang Dakwah Masjid Salman ITB</title>
+    <title>Event Bidang Dakwah Masjid Salman ITB</title>
 @endsection
 
 @section('page')

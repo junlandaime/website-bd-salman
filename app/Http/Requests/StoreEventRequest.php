@@ -30,7 +30,7 @@ class StoreEventRequest extends FormRequest
             'price' => 'required|integer',
             'meet' => 'required|integer',
             'image' => 'required|image|mimes:png,jpg,jpeg',
-            'link' => 'required|string',
+            'link' => 'required',
             'status' => 'required',
             'event_start' => 'required',
             'event_end' => 'required',

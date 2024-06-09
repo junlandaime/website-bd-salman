@@ -15,7 +15,7 @@ class PhotoController extends Controller
     public function index()
     {
         $photos = Photo::get();
-        $categories = Category::where('slug', 'gallery')->with(['child'])->withCount(['child'])->getParent()->orderBy('name', 'ASC')->get();
+        $categories = Category::where('slug', 'event')->with(['child'])->withCount(['child'])->getParent()->orderBy('name', 'ASC')->get();
         $parent = Category::getParent()->orderBy('name', 'ASC')->get();
 
 
@@ -27,7 +27,7 @@ class PhotoController extends Controller
      */
     public function create()
     {
-        $categories = Category::where('slug', 'gallery')->with(['child'])->withCount(['child'])->getParent()->orderBy('name', 'ASC')->get();
+        $categories = Category::where('slug', 'event')->with(['child'])->withCount(['child'])->getParent()->orderBy('name', 'ASC')->get();
         $parent = Category::getParent()->orderBy('name', 'ASC')->get();
 
 
