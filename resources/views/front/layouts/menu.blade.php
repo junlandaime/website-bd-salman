@@ -3,7 +3,7 @@
     <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i lg:px-32">
         <div class="vd to/4 tc wf yf">
 
-            <a class="" href="">
+            <a class="" href="{{ route('front.index') }}">
                 <div
                     class="flex bg-[#66B161] w-72 h-24 rounded-full font-semibold shadow-xl justify-between px-6 items-center lg:absolute md:top-3 border-4 md:left-1 lg:left-20">
                     <div
