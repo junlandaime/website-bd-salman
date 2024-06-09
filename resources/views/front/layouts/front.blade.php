@@ -10,7 +10,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    <link rel="icon" href="{{ asset('favicon.png') }}') }}">
+    <link rel="icon" href="{{ asset('favicon.png') }}">
     <link href="{{ asset('style.css') }}" rel="stylesheet">
     @yield('css')
 </head>
