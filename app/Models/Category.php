@@ -15,6 +15,8 @@ class Category extends Model
         'parent_id'
     ];
 
+    // protected $with = ['child', 'posts'];
+
     public function posts()
     {
         return $this->hasMany(Post::class);

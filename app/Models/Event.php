@@ -58,6 +58,8 @@ class Event extends Model
         }
     }
 
+    protected $with = ['category', 'tags'];
+
     public function category()
     {
         return $this->belongsTo(Category::class);

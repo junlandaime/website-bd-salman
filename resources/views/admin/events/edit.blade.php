@@ -9,7 +9,7 @@
     // $goal = json_parse($result);
 @endphp
 
-{{-- @dd($result) --}}
+{{-- @dd($event->link) --}}
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -98,15 +98,14 @@
 
                     <div class="mt-4">
                         <x-input-label for="link" :value="__('Link Pendaftaran')" />
-                        <x-text-input value='{{ $event->link }}' id="link" class="block mt-1 w-full"
-                            type="text" name="link" required autofocus autocomplete="link" />
+                        <textarea name="link" id="link" cols="30" rows="5" class="border border-slate-300 rounded-xl w-full">{{ $event->link }}</textarea>
                         <x-input-error :messages="$errors->get('link')" class="mt-2" />
+                        <p>standar width 480px</p>
                     </div>
 
                     <div class="mt-4">
-                        <x-input-label for="excerpt" :value="__('Ringkasan')" />
-                        <x-text-input value='{{ $event->excerpt }}' id="excerpt" class="block mt-1 w-full"
-                            type="text" name="excerpt" required autofocus autocomplete="excerpt" />
+                        <x-input-label for="excerpt" :value="__('Ringkasan Acara')" />
+                        <textarea name="excerpt" id="excerpt" cols="30" rows="5" class="border border-slate-300 rounded-xl w-full">{{ $event->excerpt }}</textarea>
                         <x-input-error :messages="$errors->get('excerpt')" class="mt-2" />
                     </div>
 
@@ -223,7 +222,6 @@
     <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
     {{-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> --}}
     <script>
-        CKEDITOR.replace('link');
         CKEDITOR.replace('excerpt');
         CKEDITOR.replace('description');
         CKEDITOR.replace('facility');

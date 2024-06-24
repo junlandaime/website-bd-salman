@@ -25,6 +25,8 @@ class Post extends Model
         'published_at' => 'datetime',
     ];
 
+    protected $with = ['category', 'author'];
+
 
     public function category()
     {

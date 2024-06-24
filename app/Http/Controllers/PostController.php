@@ -23,7 +23,7 @@ class PostController extends Controller
         $user = Auth::user();
         $posts = Post::query();
         $postsQ = Post::orderBy('id', 'desc')->get();
-        $categories = Category::whereIn('slug', ['informations', 'blogs'])->with(['child'])->with(['child'])->withCount(['child'])->getParent()->orderBy('name', 'desc')->get();
+        $categories = Category::whereIn('slug', ['informations', 'blogs'])->with(['child'])->withCount(['child'])->getParent()->orderBy('name', 'desc')->get();
         $parent = Category::getParent()->orderBy('name', 'desc')->get();
 
         // if ($user->hasRole('teacher')) {

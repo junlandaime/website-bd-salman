@@ -91,6 +91,10 @@
                                                     @endif
 
                                                     <h3 class="font-bold text-2xl">{{ $event->name }}</h3>
+                                                    <p class="font-semibold"><span
+                                                            class="text-sm w-fit py-2 px-3 rounded-full bg-[#66B161] text-white font-bold">Kategori
+                                                            : {{ $event->category->name }}</span>
+                                                    </p>
                                                     <p class="font-medium leading-[30px] text-wrap">
                                                         {!! $event->description !!}
                                                     </p>
@@ -115,54 +119,98 @@
                                             <div id="Daftar" class="tabcontent hidden">
                                                 <div class="flex flex-col gap-5 w-[450px] shrink-0">
                                                     <h3 class="font-bold text-2xl">Amankan Kursimu</h3>
-                                                    <p class="font-medium leading-[30px]">
-                                                        @if ($event->category->name == 'Pranikah')
-                                                            <form action="https://formbold.com/s/unique_form_id"
-                                                                method="POST">
-                                                                <div class="tc sf yo ap zf ep qb">
-                                                                    <input type="hidden" name="event"
-                                                                        value="{{ $event->name }}" id="event" />
-                                                                    <div class="vd to/2">
-                                                                        <label class="rc ac" for="fullname">Nama
-                                                                            Lengkap</label>
-                                                                        <input type="text" name="fullname" id="fullname"
-                                                                            placeholder="Salmani Itabi"
-                                                                            class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi" />
-                                                                    </div>
 
-                                                                    <div class="vd to/2">
-                                                                        <label class="rc ac" for="phone">ENo Kontak
-                                                                            (WA)</label>
-                                                                        <input type="text" name="phone" id="phone"
-                                                                            placeholder="085333888333"
-                                                                            class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi" />
-                                                                    </div>
+                                                    @if ($event->price == 0)
+                                                    @else
+                                                        <p class="font-medium leading-[30px]">
+                                                            No rekening <br>
+                                                            1130011057 <br>
+                                                            Bank Muamalat a.n YPM Salman ITB <br>
+                                                            kode bank : 451 <br>
+                                                            <br>
+                                                            @php
+                                                                switch ($event->category->name) {
+                                                                    case 'Pranikah':
+                                                                        $digit = 1;
+                                                                        break;
+
+                                                                    case 'Rumah Quran':
+                                                                        $digit = 2;
+                                                                        break;
+
+                                                                    case 'Bahasa Arab':
+                                                                        $digit = 3;
+                                                                        break;
+
+                                                                    case 'Madrasah Husnul Khatimah':
+                                                                        $digit = 2;
+                                                                        break;
+
+                                                                    default:
+                                                                        $digit = 9;
+                                                                        break;
+                                                                }
+                                                            @endphp
+
+                                                            Kode unik {{ $digit }} rupiah di digit terakhir. <br>
+                                                            Contoh : 200.00{{ $digit }} <br>
+                                                            <br>
+                                                            Pastikan nominal sudah sesuai sampai angka terakhir yaa <br>
+                                                        </p>
+                                                    @endif
+
+
+                                                    @if ($event->link == '-')
+                                                        <p class="font-medium leading-[30px]">
+                                                        <form action="https://formbold.com/s/unique_form_id" method="POST">
+                                                            <div class="tc sf yo ap zf ep qb">
+                                                                <input type="hidden" name="event"
+                                                                    value="{{ $event->name }}" id="event" />
+                                                                <div class="vd to/2">
+                                                                    <label class="rc ac" for="fullname">Nama
+                                                                        Lengkap</label>
+                                                                    <input type="text" name="fullname" id="fullname"
+                                                                        placeholder="Salmani Itabi"
+                                                                        class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi" />
                                                                 </div>
 
-                                                                <div class="tc sf yo ap zf ep qb">
-                                                                    <div class="vd to/2">
-                                                                        <label class="rc ac"
-                                                                            for="domis">Domisili</label>
-                                                                        <input type="text" name="domis" id="domis"
-                                                                            placeholder="Bandung"
-                                                                            class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi" />
-                                                                    </div>
+                                                                <div class="vd to/2">
+                                                                    <label class="rc ac" for="phone">No Kontak
+                                                                        (WA)</label>
+                                                                    <input type="text" name="phone" id="phone"
+                                                                        placeholder="085333888333"
+                                                                        class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi" />
                                                                 </div>
+                                                            </div>
 
-                                                                <div class="tc xf">
-                                                                    <a class="vc rg lk gh ml il hi gi _l" id="startcon"
-                                                                        href="#" onclick="gettogetInputValue()">Book
-                                                                        Your
-                                                                        Seat</a>
+                                                            <div class="tc sf yo ap zf ep qb">
+                                                                <div class="vd to/2">
+                                                                    <label class="rc ac" for="domis">Domisili</label>
+                                                                    <input type="text" name="domis" id="domis"
+                                                                        placeholder="Bandung"
+                                                                        class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi" />
                                                                 </div>
-                                                            </form>
-                                                        @else
+                                                            </div>
+
+                                                            <div class="tc xf">
+                                                                <a class="vc rg lk gh ml il hi gi _l" id="startcon"
+                                                                    href="#"
+                                                                    @if ($event->category->name === 'Pranikah') onclick="gettogetInputValue()"
+                                                                    @else
+                                                                        onclick="gettogetInputValue2()" @endif>Book
+                                                                    Your
+                                                                    Seat</a>
+                                                            </div>
+                                                        </form>
+                                                        </p>
+                                                    @else
+                                                        <p class="font-medium leading-[30px]">
                                                             {!! $event->link !!}
-                                                        @endif
+                                                        </p>
+                                                    @endif
 
 
 
-                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -252,4 +300,39 @@
             `https://wa.me/6285722183585?text=*Daftar ${event}* Nama Lengkap: ${inputName} No Kontak (WA): ${phone} Domisili: ${domis}`
         tombol.href = hrefAwal
     }
+
+    function gettogetInputValue2() {
+        let inputName = document.getElementById("fullname").value;
+        let phone = document.getElementById("phone").value;
+        let domis = document.getElementById("domis").value;
+        let event = document.getElementById("event").value;
+        let tombol = document.getElementById('startcon')
+        let hrefmulai =
+            `https://wa.me/6281395136113?text=*Daftar ${event}* Nama Lengkap: ${inputName} No Kontak (WA): ${phone} Domisili: ${domis}`
+        tombol.href = hrefmulai
+    }
+
+    // const getInputValues = () => {
+    //   const inputName = document.getElementById("fullname").value;
+    //   const phone = document.getElementById("phone").value;
+    //   const domis = document.getElementById("domis").value;
+    //   const event = document.getElementById("event").value;
+    //   let tombol = document.getElementById('startcon');
+
+    //   if (tombol) {
+    //     let hrefAwal =
+    //         `https://wa.me/6285722183585?text=*Daftar ${event}* Nama Lengkap: ${inputName} No Kontak (WA): ${phone} Domisili: ${domis}`
+    //     tombol.href = hrefAwal;
+    // }
+
+    //   let tombol2 = document.getElementById('startcon2');
+
+    //   if (tombol2) {
+    //     let hrefmulai =
+    //         `https://wa.me/6281395136113?text=*Daftar ${event}* Nama Lengkap: ${inputName} No Kontak (WA): ${phone} Domisili: ${domis}`
+    //     tombol2.href = hrefmulai;
+    //   }
+    // };
+
+    // document.addEventListener("DOMContentLoaded", getInputValues);
 </script>

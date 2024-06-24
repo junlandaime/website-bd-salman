@@ -24,7 +24,7 @@ class PostSeeder extends Seeder
                 </p>
                 <p>&nbsp;</p>
                 <p><strong>Ade Mastur</strong></p>
-                </p><a href="https://wa.me/628882031623" target="_blank"><p><strong>088-820-316-23</strong></a>',
+                </p><a href="https://wa.me/628882031626" target="_blank"><p><strong>088-820-316-26</strong></a>',
                 'body' => '-',
                 'image' => '-',
                 'published_at' => Carbon::now(),
@@ -43,7 +43,7 @@ class PostSeeder extends Seeder
                 </p>
                 <p>&nbsp;</p>
                 <p><strong>Ade Mastur</strong></p>
-                </p><a href="https://wa.me/628882031623" target="_blank"><p><strong>088-820-316-23</strong></a>',
+                </p><a href="https://wa.me/628882031626" target="_blank"><p><strong>088-820-316-26</strong></a>',
                 'body' => '-',
                 'image' => '-',
                 'published_at' => Carbon::now(),
@@ -61,7 +61,7 @@ class PostSeeder extends Seeder
                 </p>
                 <p>&nbsp;</p>
                 <p><strong>Ade Mastur</strong></p>
-                </p><a href="https://wa.me/628882031623" target="_blank"><p><strong>088-820-316-23</strong></a>',
+                </p><a href="https://wa.me/628882031626" target="_blank"><p><strong>088-820-316-26</strong></a>',
                 'body' => '-',
                 'image' => '-',
                 'published_at' => Carbon::now(),
@@ -146,7 +146,7 @@ class PostSeeder extends Seeder
                 </p>
                 <p>&nbsp;</p>
                 <p><strong>Ade Mastur</strong></p>
-                </p><a href="https://wa.me/628882031623" target="_blank"><p><strong>088-820-316-23</strong></a>',
+                </p><a href="https://wa.me/628882031626" target="_blank"><p><strong>088-820-316-26</strong></a>',
                 'body' => '-',
                 'image' => '-',
                 'published_at' => Carbon::now(),
@@ -183,7 +183,7 @@ class PostSeeder extends Seeder
                 </p>
                 <p>&nbsp;</p>
                 <p><strong>Ade Mastur</strong></p>
-                </p><a href="https://wa.me/628882031623" target="_blank"><p><strong>088-820-316-23</strong></a>',
+                </p><a href="https://wa.me/628882031626" target="_blank"><p><strong>088-820-316-26</strong></a>',
                 'body' => '-',
                 'image' => '-',
                 'published_at' => Carbon::now(),
