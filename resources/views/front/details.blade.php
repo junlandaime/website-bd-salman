@@ -297,7 +297,7 @@
         let event = document.getElementById("event").value;
         let tombol = document.getElementById('startcon')
         let hrefAwal =
-            `https://wa.me/6285722183585?text=*Daftar ${event}* Nama Lengkap: ${inputName} No Kontak (WA): ${phone} Domisili: ${domis}`
+            `https://wa.me/6285722183585?text=*Daftar ${event}*%0A%0A Nama Lengkap: ${inputName}%0A No Kontak (WA): ${phone}%0A Domisili: ${domis}`
         tombol.href = hrefAwal
     }
 
@@ -308,7 +308,7 @@
         let event = document.getElementById("event").value;
         let tombol = document.getElementById('startcon')
         let hrefmulai =
-            `https://wa.me/6281395136113?text=*Daftar ${event}* Nama Lengkap: ${inputName} No Kontak (WA): ${phone} Domisili: ${domis}`
+            `https://wa.me/6281395136113?text=*Daftar ${event}*%0A%0A Nama Lengkap: ${inputName}%0A No Kontak (WA): ${phone}%0A Domisili: ${domis}`
         tombol.href = hrefmulai
     }
 
