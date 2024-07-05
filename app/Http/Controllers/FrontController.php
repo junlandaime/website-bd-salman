@@ -31,7 +31,7 @@ class FrontController extends Controller
 
     public function events()
     {
-        $events = Event::orderBy('id', 'desc')->get();
+        $events = Event::orderBy('id', 'desc')->where('status', '1')->get();
         $tags = Tag::where('name', '!=', '')->orderBy('name', 'asc')->get();
         $categories = Category::where('slug', 'event')->with(['child'])->withCount(['child'])->getParent()->orderBy('name', 'ASC')->get();
         $now = Carbon::now();

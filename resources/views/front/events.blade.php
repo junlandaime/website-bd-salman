@@ -34,11 +34,13 @@
                             All
                         </button>
                         @forelse ($tags as $tag)
-                            <button data-filter=".{{ $tag->slug }}" @click="filterTab = {{ $tag->id }}"
-                                :class="{ 'gh lk': filterTab === {{ $tag->id }} }"
-                                class="project-tab-btn ek rg ml il vi mi">
-                                {{ $tag->name }}
-                            </button>
+                            @if ($tag->events->count() != 0)
+                                <button data-filter=".{{ $tag->slug }}" @click="filterTab = {{ $tag->id }}"
+                                    :class="{ 'gh lk': filterTab === {{ $tag->id }} }"
+                                    class="project-tab-btn ek rg ml il vi mi">
+                                    {{ $tag->name }}
+                                </button>
+                            @endif
                         @empty
                         @endforelse
 
