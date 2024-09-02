@@ -33,7 +33,7 @@ class FrontController extends Controller
     {
         $events = Event::orderBy('id', 'desc')->where('status', '1')->get();
         $tags = Tag::where('name', '!=', '')->orderBy('name', 'asc')->get();
-        $categories = Category::where('slug', 'event')->with(['child'])->withCount(['child'])->getParent()->orderBy('name', 'DESC')->get();
+        $categories = Category::where('slug', 'event')->with(['child'])->withCount(['child'])->getParent()->orderBy('name', 'ASC')->get();
         $now = Carbon::now();
 
 
@@ -43,7 +43,7 @@ class FrontController extends Controller
     public function details(Event $event)
     {
         $events = Event::orderBy('id', 'desc')->get();
-        $galleries = Photo::where('gallery_id', $event->category->id)->orderBy('id', 'asc')->paginate(4);
+        $galleries = Photo::where('gallery_id', $event->category->id)->orderBy('id', 'desc')->paginate(4);
         $tags = Tag::where('name', '!=', '')->orderBy('name', 'asc')->get();
         $now = Carbon::now();
 
