@@ -43,7 +43,7 @@ class FrontController extends Controller
     public function details(Event $event)
     {
         $events = Event::orderBy('id', 'desc')->get();
-        $galleries = Photo::where('gallery_id', $event->category->id)->paginate(4);
+        $galleries = Photo::where('gallery_id', $event->category->id)->orderBy('id', 'asc')->paginate(4);
         $tags = Tag::where('name', '!=', '')->orderBy('name', 'asc')->get();
         $now = Carbon::now();
 
